@@ -12,7 +12,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: set-text-color($primary-color);
     @include easeOut;
   }
 
@@ -109,12 +109,37 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: white;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
     &:hover {
       color: $secondary-color;
     }
+  }
+}
+
+//Media Queries for responsize
+@mixin mediaSmall {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMedium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLarge {
+  @media screen and (min-width: 769) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXLarge {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
